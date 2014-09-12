@@ -1,0 +1,31 @@
+kakaologin
+==========
+
+GET /oauth/authorize?client_id={4347538e6e232009cc239f7ac55c4ff6}&redirect_uri={http://www.sorihan.com/kakao_oauth/}&response_type=code HTTP/1.1
+Host: kauth.kakao.com
+
+<!doctype HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Login Demo - Kakao Javascript SDK</title>
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+  </head>
+  <body>
+    <a id="kakao-login-btn"></a>
+
+    <script>
+      // 사용할 앱의 Javascript 키를 설정해 주세요.
+      Kakao.init('98c752b62ef5b5ded810530deed81ac7');
+
+      // 카카오 로그인 버튼을 생성합니다.
+      Kakao.Auth.createLoginButton({
+        container: '#kakao-login-btn',
+        success: function(authObj) {
+          alert(JSON.stringify(authObj));
+        }
+      });
+    </script>
+  </body>
+</html>
